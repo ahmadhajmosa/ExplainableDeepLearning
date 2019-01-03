@@ -21,8 +21,14 @@ from AttentionDecoder import AttentionDecoder
 import pickle
 from keras.models import Sequential
 from policyagent import PolicyAgent
-
-
+import sympy
+from sympy import *
+import itertools
+import pandas as pd
+from sympy.logic.inference import satisfiable
+from sympy.logic import simplify_logic
+from sympy.logic.boolalg import is_cnf
+import  time
 # generate data stream (a.k.a. recall memory)
 D = deque()
 D_raw = deque()
@@ -38,31 +44,30 @@ trails=100
 
 np.random.seed(1)
 
-import sympy
-from sympy import *
+
 sm= symbols('X0:3')
-import itertools
-import pandas as pd
+
 n_variable = 3
 truth_table = list(itertools.product([0, 1], repeat=n_variable))
 truth_table_df= pd.DataFrame(truth_table, columns= np.asarray(sm).astype('str'))
-# write a target logical expression, that the sympy should find
-y=(truth_table_df['X0'] & truth_table_df['X1']) |  truth_table_df['X2']
-# find the miniterms, where y is true
 
-def target_vec_rule_dict(n_variable):
-    vec_to_rule = dict()
-    rule_to_vec = dict()
-    vec_to_op = dict()
-    op_to_vec = dict()
+# write a target logical expression, that the sympy should find
+y=(truth_table_df['X0'] & truth_table_df['X1']) |  truth_table_df['X2']  # x0x1 + x2
+
+
+def target_vec_rule_dict(n_variable):  # create vec to symbol and symbol to vec dictinaries
+    vec_to_sym = dict()   # vector keys and boolian variable symbol values
+    sym_to_vec = dict()  # boolian symbol keys and vector values
+    vec_to_op = dict()   # vect key and operation symbol values
+    op_to_vec = dict()  # operation symbol keys and vect values
 
 
     for i in range(n_variable):
-        vec_to_rule[i] = 'X' + str(i)
-        rule_to_vec['X' + str(i)] = i
+        vec_to_sym[i] = 'X' + str(i)
+        sym_to_vec['X' + str(i)] = i
 
-        vec_to_rule[i + n_variable ] = '~X' + str(i)
-        rule_to_vec['~X' + str(i)] = i + n_variable
+        vec_to_sym[i + n_variable ] = '~X' + str(i)
+        sym_to_vec['~X' + str(i)] = i + n_variable
 
     vec_to_op[0]='&'
     vec_to_op[1]='|'
@@ -72,25 +77,25 @@ def target_vec_rule_dict(n_variable):
     op_to_vec['|'] = 1
     op_to_vec['='] = 2
 
-    return  vec_to_rule, rule_to_vec, vec_to_op, op_to_vec
+    return  vec_to_sym, sym_to_vec, vec_to_op, op_to_vec
 
 
-vec_to_symbol, symbol_to_vec, vec_to_op, op_to_vec = target_vec_rule_dict(n_variable)
+vec_to_symbol, symbol_to_vec, vec_to_op, op_to_vec = target_vec_rule_dict(n_variable)  # get mapping dictinaries
 
-minterms=truth_table_df[y==1].values.tolist()
-minterms
-agent = PolicyAgent(intermediate_dim=50,MAX_SEQUENCE_LENGTH=1,NumCol=2,NB_VARS=n_variable*2,NB_WORDS_OUT=n_variable*2)
+minterms=truth_table_df[y==1].values.tolist()  # slice rows where target is true
+
+agent = PolicyAgent(intermediate_dim=50,MAX_SEQUENCE_LENGTH=1,NumCol=2,NB_VARS=n_variable*2,NB_WORDS_OUT=n_variable*2)  # initialize policy agent
 print(agent.model.summary())
 
-def term_to_expr(minterms,vec_to_symbol,symbol_to_vec):
+def term_to_expr(minterms,vec_to_symbol,symbol_to_vec): # get miniterms (rows of binary vectors) and generate boolean expressions
         expr_list = []
         for i in range(len(minterms)):
-            expr=[]
-            for k in range(len(minterms[i])):
+            expr=[] # single expression initialization
+            for k in range(len(minterms[i])): # for every elemnt in the row
                 if minterms[i][k] == 0 :
-                    expr.append(vec_to_symbol[k+n_variable])
+                    expr.append(vec_to_symbol[k+n_variable]) # if the binary values is 0 then get the negative symbol ~X_k
                 else:
-                    expr.append(vec_to_symbol[k])
+                    expr.append(vec_to_symbol[k]) # get X_k
             expr_list.append(expr)
         return expr_list
 
@@ -126,10 +131,13 @@ def get_reward_conv(action,truth_table_df,expr_list, y):
     expr_list_temp = expr_list.copy()
     #print(expr_list_temp)
     term_pre = np.zeros(len(truth_table_df)).astype(bool)
+    symbols=[]
     for i in expr_list_temp:
         #print(i)
+
         term_val = np.ones(len(truth_table_df)).astype(bool)
         for j in i:
+            symbols.append(j)
             #print(j)
             if j[0] == '~':
                 #print(j[1:])
@@ -142,16 +150,30 @@ def get_reward_conv(action,truth_table_df,expr_list, y):
         term_pre =  term_pre |  term_val
         #print(term_pre)  # Or
     #reward = 1 if np.sum(np.equal(term_pre,y)) / len(y) == 1 else -1
-    reward = np.sum(np.equal(term_pre,y)) / len(y)
 
-    return reward
+    acc = np.sum(np.equal(term_pre,y)) / len(y)
+    uniq, counts = np.unique(term_pre, return_counts=True) # to get the size of expr
+    #print(counts)
+    #reward = cost - counts[-1]
+    #print(uniq,counts)
+    #print(len(symbols))
+    reward = acc - 0.01 * len(symbols)/(2*n_variable)
+    return reward, acc
 expr_list_target= expr_list.copy()
 
 #expr_list= expr_list_target.copy()
-for iter in range(10000):
+state_id = 0
+
+memory_dict = dict()
+memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))] = dict()
+memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] = 0
+memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['id'] = state_id
+
+for iter in range(1000):
         expr_list = expr_list_target.copy()
+        memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] = memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] + 1
         for depth in range(10):
-            try:
+            #try:
 
                 input1_sample, input2_sample, expr_list_conv = cov_over_seq(expr_list,vec_to_symbol,symbol_to_vec)
                 prob_list = []
@@ -160,27 +182,65 @@ for iter in range(10000):
                 action_index_list = []
                 reward_list = []
                 state_list = []
+                cost_list = []
+                MCS_list = []
 
                 for conv_iter in range(len(input1_sample)):
+
                     state = [np.reshape(input1_sample[conv_iter],(1,6,1)), np.reshape(input2_sample[conv_iter],(1,6,1))]
-                    action, action_index, prob = agent.conv_act(state,vec_to_symbol,symbol_to_vec)
+                    state_l = [input1_sample[conv_iter], input2_sample[conv_iter]]
+
+                    action, action_index, prob = agent.conv_act(state,state_l,vec_to_symbol,symbol_to_vec)
                     expr_list_conv[conv_iter].append(action)
-                    reward = get_reward_conv(action, truth_table_df, expr_list_conv[conv_iter],y)
+                    reward, cost = get_reward_conv(action, truth_table_df, expr_list_conv[conv_iter],y)
                     reward_list.append(reward)
+                    if 'depth_{}:_{}'.format(0,str(expr_list_conv[conv_iter])) in memory_dict.keys():
+                        u = reward / (memory_dict['depth_{}:_{}'.format(0,str(expr_list_conv[conv_iter]))]['value'] + 1e-20)
+                        MCS_list.append(u)
+
+                    else :
+                        MCS_list.append(reward)
+
+                    cost_list.append(cost)
                     prob_list.append(prob)
                     prob_list_all.append(np.prod(prob))
                     action_list.append(action)
                     action_index_list.append(action_index)
                     state_list.append(state)
+                if(len(reward_list) == 0 ):
+                    break
+                else:
 
-                winner_comb = np.argmax(reward_list)
-                expr_list = expr_list_conv[winner_comb].copy()
-                print(expr_list)
-                print('rew',reward_list[winner_comb])
-                #print(np.shape(prob_list[winner_comb]))
-                agent.remember(state_list[winner_comb], action_list[winner_comb], action_index_list[winner_comb],reward_list[winner_comb], prob_list[winner_comb])
-            except:
-                break
+                    winner_comb = np.argmax(MCS_list)
+                    expr_list = expr_list_conv[winner_comb].copy()
+                    if 'depth_{}:_{}'.format(0,str(expr_list)) in memory_dict.keys():
+                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['value'] += 1
+                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['reward'] = reward_list[winner_comb]
+                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['cost'] = cost_list[winner_comb]
+
+                    else :
+                        state_id += 1
+                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))] = dict()
+                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['value'] = 0
+                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['reward'] = reward_list[winner_comb]
+                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['cost'] = cost_list[winner_comb]
+
+                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['id'] = state_id
+                        print('new state: ',state_id )
+
+                    print(MCS_list)
+                    print(expr_list)
+                    print(memory_dict['depth_{}:_{}'.format(0,str(expr_list))])
+                    print('depth: ',depth,winner_comb, input1_sample[winner_comb], input2_sample[winner_comb])
+
+                    print('reward',reward_list[winner_comb])
+                    print('cost',cost_list[winner_comb])
+
+                    #print(np.shape(prob_list[winner_comb]))
+                    agent.remember(state_list[winner_comb], action_list[winner_comb], action_index_list[winner_comb],reward_list[winner_comb], prob_list[winner_comb])
+            #except:
+             #       break
         loss,ac = agent.train(iter)
         print('iter: ',iter, 'loss: ', loss)
         #print('sol: ',ac)
+print(memory_dict)

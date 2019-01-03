@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import sympy
+from sympy import *
 from collections import deque
 from functions import random_data, random_rules
 from keras.preprocessing.text import Tokenizer
@@ -21,6 +23,8 @@ from AttentionDecoder import AttentionDecoder
 from collections import deque
 import keras
 import random
+from sympy.logic import simplify_logic
+
 import numpy as np
 import pandas as pd
 from functions import random_data, random_rules
@@ -36,10 +40,10 @@ class PolicyAgent:
     def __init__(self,intermediate_dim,MAX_SEQUENCE_LENGTH,NumCol,NB_VARS,NB_WORDS_OUT):
         self.memory = deque(maxlen=2000)
         self.gamma = 0.95    # discount rate
-        self.epsilon = 1.0  # exploration rate
-        self.epsilon_min = 0.01
+        self.epsilon = 0.99  # exploration rate
+        self.epsilon_min = 0.001
         self.epsilon_decay = 0.995
-        self.learning_rate = 0.0001
+        self.learning_rate = 0.01
         self.intermediate_dim=100
         self.MAX_SEQUENCE_LENGTH=MAX_SEQUENCE_LENGTH
         self.NB_VARS=NB_VARS
@@ -53,7 +57,7 @@ class PolicyAgent:
         self.gradients = []
         self.rewards = []
         self.probs = []
-        self.log_path = './logs'
+        self.log_path = './logs/lr8'
 
     def write_log(self, names, logs, batch_no):
         for name, value in zip(names, logs):
@@ -96,9 +100,9 @@ class PolicyAgent:
 
             model = Model([model_input, model_input2], attention_decoder)
             model_prop = Model([model_input, model_input2], attention_prop)
-        model.compile(loss='binary_crossentropy',optimizer=SGD(lr=self.learning_rate))
+        model.compile(loss='binary_crossentropy',optimizer=SGD(lr=self.learning_rate, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=1. ))
         self.model= model
-        self.log_path = './logs'
+        self.log_path = './logs/lr8'
 
         self.callback = TensorBoard(self.log_path)
         self.callback.set_model(self.model)
@@ -120,7 +124,7 @@ class PolicyAgent:
         self.probs.append(prob)
 
 
-    def conv_act(self, state,vec_to_symbol,symbol_to_vec):
+    def conv_act(self, state,state_list,vec_to_symbol,symbol_to_vec):
         #if np.random.rand() <= self.epsilon:
         #    rule=random_rules(1, size=self.NumCol)
         #    sequences = output_tokenizer.texts_to_sequences(rule)
@@ -146,7 +150,10 @@ class PolicyAgent:
 
 
         if np.random.rand() <= self.epsilon:
-            action_index =  np.random.choice(2, self.NB_VARS)
+
+            action ,action_index = self.simplify_expr(state_list, vec_to_symbol,symbol_to_vec)
+            if(len(action_index) == 0):
+                action_index =  np.random.choice(2, self.NB_VARS)
             action = []
             for i in range(len(action_index)):
                 if action_index[i] == 1:
@@ -160,6 +167,33 @@ class PolicyAgent:
 
 
         return action,action_index,aprob  # returns action
+    def simplify_expr(self,terms, vec_to_symbol,symbol_to_vec):
+            term1 = []
+            term2 = []
+
+            sms= symbols('X0:{}'.format(self.NB_VARS/2))
+            for i in range(self.NB_VARS):
+                    #print(i)
+                    if terms[0][i] == 1:
+                        term1.append(vec_to_symbol[i])
+                    if terms[1][i] == 1:
+                        term2.append(vec_to_symbol[i])
+            expr = '(' + ' & '.join(term1) + ')' + '|' + '(' + ' & '.join(term2) + ')'
+            if (term2 == []) or (term1 == []):
+                return [],[]
+
+            simplified_expr = simplify_logic(expr, form = 'cnf',deep = False)
+            action_index = np.zeros(self.NB_VARS)
+            action = []
+            if "|" in str(simplified_expr):
+                return [],[]
+            else:
+                for sy in str(simplified_expr).split('&') :
+                    action_index[symbol_to_vec[sy.strip()]] = 1
+                    action.append(sy.strip())
+
+                return    action, action_index
+
 
     def act(self, state,output_index2word,output_tokenizer,MAX_SEQUENCE_LENGTH,input_tokenizer):
         #if np.random.rand() <= self.epsilon:
@@ -222,10 +256,12 @@ class PolicyAgent:
         Y = self.probs + self.learning_rate * np.squeeze(np.vstack([gradients]))
         loss, gradient_norm  = self.model.train_on_batch([X1,X2],np.reshape(Y,(-1,self.NB_VARS,1)))
         current_actions=self.actions.copy()
-        train_names = ['train_loss', 'train_w_gradient_norm','train_policy_gradient_norm']
+        train_names = ['train_loss', 'train_w_gradient_norm','train_policy_gradient_norm','rewards','values']
         policy_gradient_norm = np.sqrt(sum([np.sum(np.square(g)) for g in gradients]))
-        self.write_log(train_names, [loss, gradient_norm, policy_gradient_norm], batch_no)
-
+        self.write_log(train_names, [loss, gradient_norm, policy_gradient_norm, rewards[-1],np.sum(rewards)], batch_no)
+        if self.epsilon > self.epsilon_min:
+            print(self.epsilon)
+            self.epsilon *= self.epsilon_decay
         #print(policy_gradient_norm, gradient_norm)
         self.states, self.probs, self.gradients, self.rewards, self.actions = [], [], [], [], []
         return loss,current_actions

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fd7c5d-5303-422c-ae61-3ca76dfcc70b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/InductiveLogicRL/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/events.out.tfevents.1546440760.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/events.out.tfevents.1546440830.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +22,8 @@
         <counts>
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -152,12 +158,12 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,6 +191,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
