@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c0565b6-2301-4251-b214-2a43c7e63258" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/D3treelayout/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D3treelayout/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D3treelayout/treedata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D3treelayout/index3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D3treelayout/treedata2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546526667.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546526806.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546526943.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546527044.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546527673.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546527782.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546528099.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546529934.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546530599.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546530664.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546531016.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546531122.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3treelayout/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/D3treelayout/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3treelayout/treedata.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3treelayout/treedata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546611056.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546611482.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546611756.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/lr8/events.out.tfevents.1546612102.AT-VIETERTLS001" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/nn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/policyagent.py" beforeDir="false" afterPath="$PROJECT_DIR$/policyagent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pylogic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Part 1 XOR Gate/WRD workshop .ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Part 1 XOR Gate/WRD workshop .ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,31 +34,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="json" value="4" />
-          <entry key="py" value="8" />
+          <entry key="html" value="3" />
+          <entry key="json" value="12" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="JSON" value="4" />
-          <entry key="Python" value="8" />
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="12" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="315" />
-          <entry key="html" value="363" />
-          <entry key="json" value="57" />
-          <entry key="py" value="1610" />
+          <entry key="html" value="554" />
+          <entry key="json" value="62" />
+          <entry key="py" value="3053" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="363" />
-          <entry key="JSON" value="57" />
-          <entry key="Python" value="1925" />
+          <entry key="HTML" value="554" />
+          <entry key="JSON" value="62" />
+          <entry key="Python" value="3368" />
         </counts>
       </usages-collector>
     </session>
@@ -75,20 +68,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/client/session.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36747">
-              <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
+            <state relative-caret-position="146">
+              <caret line="257" selection-start-line="257" selection-end-line="257" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <marker date="1546876318567" expanded="true" signature="16613:16614" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/result.json">
+        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/numpy/core/fromnumeric.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="197">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/json/encoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/D3treelayout/index3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11071">
+              <caret line="458" column="17" selection-start-line="458" selection-end-line="459" />
             </state>
           </provider>
         </entry>
@@ -105,17 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/D3treelayout/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/D3treelayout/treedata.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret column="1657" selection-start-column="1657" selection-end-column="1657" />
+            <state relative-caret-position="324">
+              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -123,35 +129,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/D3treelayout/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1998">
-              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+            <state relative-caret-position="108">
+              <caret line="25" column="34" selection-start-line="25" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/pandas/core/indexes/base.py">
+        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/framework/errors_impl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133029">
-              <caret line="4990" column="10" selection-start-line="4990" selection-start-column="4" selection-end-line="4990" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/sympy/logic/boolalg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="999">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/sympy/core/sympify.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9747">
-              <caret line="367" selection-start-line="367" selection-end-line="367" />
+            <state relative-caret-position="463">
+              <caret line="525" selection-start-line="525" selection-end-line="525" />
             </state>
           </provider>
         </entry>
@@ -159,13 +147,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/policyagent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+            <state relative-caret-position="206">
+              <caret line="153" column="17" selection-start-line="153" selection-start-column="17" selection-end-line="153" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -178,13 +173,25 @@
       <find>memory</find>
       <find>['tree']</find>
       <find>path</find>
+      <find>&quot;</find>
+      <find>'reward'</find>
+      <find>visi</find>
       <find>link</find>
+      <find>visit</find>
+      <find>visits</find>
+      <find>['X1','X0']</find>
+      <find>get_reward_conv</find>
+      <find>simü</find>
     </findStrings>
     <replaceStrings>
       <replace>prob</replace>
       <replace>str</replace>
       <replace>mcs_list</replace>
       <replace>[0]</replace>
+      <replace>'W'</replace>
+      <replace>&quot;N&quot;</replace>
+      <replace>'</replace>
+      <replace>N</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -196,9 +203,11 @@
         <option value="$PROJECT_DIR$/result.json" />
         <option value="$PROJECT_DIR$/D3treelayout/index2.html" />
         <option value="$PROJECT_DIR$/D3treelayout/treedata.json" />
+        <option value="$PROJECT_DIR$/D3treelayout/index3.html.py" />
+        <option value="$PROJECT_DIR$/D3treelayout/index3.html" />
+        <option value="$PROJECT_DIR$/D3treelayout/index.html" />
         <option value="$PROJECT_DIR$/policyagent.py" />
         <option value="$PROJECT_DIR$/nn.py" />
-        <option value="$PROJECT_DIR$/D3treelayout/index.html" />
       </list>
     </option>
   </component>
@@ -311,6 +320,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6666667" visible="true" weight="0.18440464" />
       <window_info id="Structure" order="1" sideWeight="0.5006418" side_tool="true" weight="0.18440464" />
@@ -318,12 +328,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38286334" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43926248" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.43058568" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.20824295" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.47613883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -331,18 +341,18 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18440464" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6666667" weight="0.18440464" />
+      <window_info id="Structure" order="1" sideWeight="0.5006418" side_tool="true" weight="0.18440464" />
+      <window_info id="Favorites" order="2" sideWeight="0.33333334" side_tool="true" weight="0.18440464" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.38286334" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33188722" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.15509762" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.20824295" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.47613883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -356,140 +366,154 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>with open('D3treelayout/treedata.json', 'w') as fp:
-    json.dump(tree_dict, fp)</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+current_indexes = np.unique(indexes)
+random_per=np.random.choice(2, len(current_indexes))
+print(random_per)
+action_index = np.zeros(self.NB_VARS)
+action_index[current_indexes]=random_per
+print(action_index)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>state_l</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+current_indexes = np.unique(indexes)
+random_per=np.random.choice(2, len(current_indexes))
+print(random_per)
+print(current_indexes[random_per])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>term2</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+current_indexes = np.unique(indexes)
+random_per=np.random.choice(2, len(current_indexes))
+print(random_per)
+print(current_indexes)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>term1</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+current_indexes = np.unique(indexes)
+random_per=np.random.choice(2, len(current_indexes))
+print(current_indexes[random_per])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for i in range(6):
-        #print(i)
-        if terms[0][i] == 1:
-            term1.append(vec_to_symbol[i])
-        if terms[1][i] == 1:
-            term2.append(vec_to_symbol[i])</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+np.unique(indexes)
+print(np.random.choice(2, len(np.unique(indexes))))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>term1 = []
-term2 = []
-sms= symbols('X0:{}'.format(6/2))</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+np.unique(indexes)
+np.random.choice(2, len(np.unique(indexes)))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>term1 = []
-term2 = []
-sms= symbols('X0:{}'.format(self.NB_VARS/2))</expression-string>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.where(state_list[i] == 1)))
+print(np.unique(indexes))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.argwhere(state_list[i] == 1)))
+print(np.unique(indexes))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(list(np.argwhere(state_list[i] == 1)))
+print(indexes)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>indexes = []
+for i in range(2):
+    indexes.append(np.argwhere(state_list[i] == 1)[0])
+print(indexes)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>self.probs</expression-string>
+        <expression-string>truth_table_df</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>gradients</expression-string>
+        <expression-string>len(action) == 0</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rewards</expression-string>
+        <expression-string>action_index = self.get_random_action(state_list)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>not(found)</expression-string>
+        <expression-string>eval(parent_exp)['children']</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>~found</expression-string>
+        <expression-string>eval(parent_exp)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>str(simplified_expr)=='True'</expression-string>
+        <expression-string>eval(parent_exp['children'])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>trimmed</expression-string>
+        <expression-string>parent_exp = [&quot;tree_dict[0]&quot;]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>eval(&quot;tree_dict[0]&quot; + branch)[ind][&quot;visits&quot;]+=1</expression-string>
+        <expression-string>tempdict['P'] = prob_list_all[winner_comb].astype(np.float64)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>eval(&quot;tree_dict[0]&quot; + branch)[ind]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>eval(&quot;tree_dict[0]&quot; + branch + '[{}]=dict()'.format(ind))</expression-string>
+        <expression-string>eval(nod)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4833">
-          <caret line="211" column="46" selection-start-line="211" selection-start-column="46" selection-end-line="211" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36747">
-          <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/result.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/D3treelayout/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -514,24 +538,105 @@ sms= symbols('X0:{}'.format(self.NB_VARS/2))</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/policyagent.py">
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/client/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        <state relative-caret-position="27">
+          <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/numpy/lib/arraysetops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D3treelayout/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="25" column="34" selection-start-line="25" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D3treelayout/index3.html.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D3treelayout/treedata2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="166" selection-start-column="160" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/framework/errors_impl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="525" selection-start-line="525" selection-end-line="525" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D3treelayout/index3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11071">
+          <caret line="458" column="17" selection-start-line="458" selection-end-line="459" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/D3treelayout/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="149" column="26" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
+        <state relative-caret-position="324">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/D3treelayout/treedata.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret column="1657" selection-start-column="1657" selection-end-column="1657" />
+        <state>
+          <caret column="47707" selection-start-column="47707" selection-end-column="47707" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/policyagent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="153" column="17" selection-start-line="153" selection-start-column="17" selection-end-line="153" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="257" selection-start-line="257" selection-end-line="257" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1546876318567" expanded="true" signature="16613:16614" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

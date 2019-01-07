@@ -38,9 +38,8 @@
 
 <script>
 
-d3.json("./treedata.json", function(treeData){
 
-
+d3.json("treedata.json", function(treeData){
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
 	width = 4060 - margin.right - margin.left,
@@ -61,7 +60,7 @@ var svg = d3.select("#tree1").append("svg")
 	.attr("height", height + margin.top + margin.bottom)
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+console.log(treeData)
 root = treeData[0];
 root.x0 = height / 2;
 root.y0 = 0;
@@ -99,8 +98,8 @@ function update(source) {
 	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
       .attr("transform", "translate(0,0) rotate(-30)")
 
-	  .text(function(d) { return 'State: ' + d.name + ' V: ' + d.visits + ' R: ' + d.reward + ' P: ' + d.prob
-	  + ' C: ' + d.cost})
+	  .text(function(d) { return 'State: ' + d.name + ' N: ' + d.N + ' R: ' + d.W + ' P: ' + d.P
+	  + ' C: ' + d.cost + ' Q: ' + d.Q})
 	  .style("fill-opacity", 1e-6)
       .style("font-size", "6px");
 
@@ -133,6 +132,9 @@ function update(source) {
   // Update the links…
   var link = svg.selectAll("path.link")
 	  .data(links, function(d) { return d.target.id; });
+   color = d3.scale.linear().domain([1,100])
+      .interpolate(d3.interpolateHcl)
+      .range([d3.rgb("#eb8c00"), d3.rgb('#602320')])
 
   // Enter any new links at the parent's previous position.
   link.enter().insert("path", "g")
@@ -142,7 +144,11 @@ function update(source) {
 	  .attr("d", function(d) {
 		var o = {x: source.x0, y: source.y0};
 		return diagonal({source: o, target: o});
-	  });
+	  })
+	  .style("stroke-width", function (d, i) { console.log(d); return d.source.N/10 })
+	  .style("stroke", function (d, i) { console.log(d.source.N); return color(d.source.N) })
+
+	  ;
 
   // Transition links to their new position.
   link.transition()
@@ -178,6 +184,7 @@ function click(d) {
   update(d);
 }
 });
+
 </script>
 
   </body>

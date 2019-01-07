@@ -151,12 +151,14 @@ class PolicyAgent:
         if self.epsilon > 0.1:
             if np.random.rand() <= self.epsilon:
                 random_or_simplifier = np.random.choice(2,1)
+                #random_or_simplifier = 0
                 if random_or_simplifier == 0:
                     action ,action_index = self.simplify_expr(state_list, vec_to_symbol,symbol_to_vec)
                     if(len(action_index) == 0):
-                        action_index =  np.random.choice(2, self.NB_VARS)
+                        action_index = self.get_random_action(state_list)
+                        #action_index = np.zeros(self.NB_VARS)
                 else:
-                        action_index = np.random.choice(2, self.NB_VARS)
+                        action_index = self.get_random_action(state_list)
                 action = []
                 for i in range(len(action_index)):
                     if action_index[i] == 1:
@@ -171,6 +173,17 @@ class PolicyAgent:
 
 
         return action,action_index,aprob  # returns action
+
+    def get_random_action(self, state_list):
+        indexes = []
+        for i in range(2):
+            indexes.append(list(np.where(state_list[i] == 1)))
+        current_indexes = np.unique(np.concatenate(indexes,axis=1))
+        random_per = np.random.choice(2, len(current_indexes))
+        action_index = np.zeros(self.NB_VARS)
+        action_index[current_indexes] = random_per
+        return action_index
+
     def simplify_expr(self,terms, vec_to_symbol,symbol_to_vec):
             term1 = []
             term2 = []
@@ -189,6 +202,10 @@ class PolicyAgent:
             simplified_expr = simplify_logic(expr, form = 'cnf',deep = False)
             action_index = np.zeros(self.NB_VARS)
             action = []
+            if(str(simplified_expr)=='True'):
+                print('check')
+            if(str(simplified_expr)=='False'):
+                print('check')
             if ("|" in str(simplified_expr)) or (str(simplified_expr)=='True') or (str(simplified_expr)=='False'):
                 return [],[]
             else:
