@@ -41,7 +41,7 @@ class PolicyAgent:
         self.memory = deque(maxlen=2000)
         self.gamma = 0.95    # discount rate
         self.epsilon = 0.99  # exploration rate
-        self.epsilon_min = 0.001
+        self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
         self.learning_rate = 0.01
         self.intermediate_dim=100
@@ -148,16 +148,20 @@ class PolicyAgent:
             if action_index[i] == 1:
                     action.append(vec_to_symbol[i])
 
+        if self.epsilon > 0.1:
+            if np.random.rand() <= self.epsilon:
+                random_or_simplifier = np.random.choice(2,1)
+                if random_or_simplifier == 0:
+                    action ,action_index = self.simplify_expr(state_list, vec_to_symbol,symbol_to_vec)
+                    if(len(action_index) == 0):
+                        action_index =  np.random.choice(2, self.NB_VARS)
+                else:
+                        action_index = np.random.choice(2, self.NB_VARS)
+                action = []
+                for i in range(len(action_index)):
+                    if action_index[i] == 1:
+                        action.append(vec_to_symbol[i])
 
-        if np.random.rand() <= self.epsilon:
-
-            action ,action_index = self.simplify_expr(state_list, vec_to_symbol,symbol_to_vec)
-            if(len(action_index) == 0):
-                action_index =  np.random.choice(2, self.NB_VARS)
-            action = []
-            for i in range(len(action_index)):
-                if action_index[i] == 1:
-                    action.append(vec_to_symbol[i])
 
 
             #rule=random_rules(1, size=self.NumCol)
@@ -185,7 +189,7 @@ class PolicyAgent:
             simplified_expr = simplify_logic(expr, form = 'cnf',deep = False)
             action_index = np.zeros(self.NB_VARS)
             action = []
-            if "|" in str(simplified_expr):
+            if ("|" in str(simplified_expr)) or (str(simplified_expr)=='True') or (str(simplified_expr)=='False'):
                 return [],[]
             else:
                 for sy in str(simplified_expr).split('&') :

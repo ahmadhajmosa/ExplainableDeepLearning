@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 from collections import deque
+import json
+
 from functions import random_data, random_rules
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
@@ -87,7 +89,8 @@ minterms=truth_table_df[y==1].values.tolist()  # slice rows where target is true
 agent = PolicyAgent(intermediate_dim=50,MAX_SEQUENCE_LENGTH=1,NumCol=2,NB_VARS=n_variable*2,NB_WORDS_OUT=n_variable*2)  # initialize policy agent
 print(agent.model.summary())
 
-def term_to_expr(minterms,vec_to_symbol,symbol_to_vec): # get miniterms (rows of binary vectors) and generate boolean expressions
+
+def term_to_expr(minterms, vec_to_symbol, symbol_to_vec):  # get miniterms (rows of binary vectors) and generate boolean expressions
         expr_list = []
         for i in range(len(minterms)):
             expr=[] # single expression initialization
@@ -152,26 +155,36 @@ def get_reward_conv(action,truth_table_df,expr_list, y):
     #reward = 1 if np.sum(np.equal(term_pre,y)) / len(y) == 1 else -1
 
     acc = np.sum(np.equal(term_pre,y)) / len(y)
-    uniq, counts = np.unique(term_pre, return_counts=True) # to get the size of expr
-    #print(counts)
-    #reward = cost - counts[-1]
-    #print(uniq,counts)
-    #print(len(symbols))
-    reward = acc - 0.01 * len(symbols)/(2*n_variable)
+    if (acc > 0.7):
+        reward = acc - 0.01 * len(symbols)/(2*n_variable)
+    else:
+        reward = -acc - 0.01 * len(symbols)/(2*n_variable)
     return reward, acc
 expr_list_target= expr_list.copy()
 
-#expr_list= expr_list_target.copy()
 state_id = 0
 
 memory_dict = dict()
-memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))] = dict()
-memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] = 0
-memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['id'] = state_id
+memory_dict['{}'.format(str(expr_list_target))] = dict()
+memory_dict['{}'.format(str(expr_list_target))]['visits'] = 0
+memory_dict['{}'.format(str(expr_list_target))]['id'] = state_id
+tree_dict = []
+root = dict()
+root['name'] = 'depth_{}_{}'.format(0,str(expr_list_target))
+root['parent'] = 'null'
+root['visits'] = 0
+root['reward'] = 0
+root['cost'] = 0
+
+root['state'] = '{}'.format(str(expr_list_target))
+root['children'] = []
+tree_dict.append(root)
 
 for iter in range(1000):
         expr_list = expr_list_target.copy()
-        memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] = memory_dict['depth_{}:_{}'.format(0,str(expr_list_target))]['value'] + 1
+        memory_dict['{}'.format(str(expr_list_target))]['visits'] += 1
+        tree_dict[0]['visits'] += 1
+        node_names = ['depth_{}_{}'.format(0,str(expr_list_target))]
         for depth in range(10):
             #try:
 
@@ -183,7 +196,7 @@ for iter in range(1000):
                 reward_list = []
                 state_list = []
                 cost_list = []
-                MCS_list = []
+                mcs_list = []
 
                 for conv_iter in range(len(input1_sample)):
 
@@ -194,12 +207,12 @@ for iter in range(1000):
                     expr_list_conv[conv_iter].append(action)
                     reward, cost = get_reward_conv(action, truth_table_df, expr_list_conv[conv_iter],y)
                     reward_list.append(reward)
-                    if 'depth_{}:_{}'.format(0,str(expr_list_conv[conv_iter])) in memory_dict.keys():
-                        u = reward / (memory_dict['depth_{}:_{}'.format(0,str(expr_list_conv[conv_iter]))]['value'] + 1e-20)
-                        MCS_list.append(u)
+                    if '{}'.format(str(expr_list_conv[conv_iter])) in memory_dict.keys():
+                        u = reward / (memory_dict['{}'.format(str(expr_list_conv[conv_iter]))]['visits'] + 1e-20)
+                        mcs_list.append(reward)
 
                     else :
-                        MCS_list.append(reward)
+                        mcs_list.append(reward)
 
                     cost_list.append(cost)
                     prob_list.append(prob)
@@ -207,40 +220,132 @@ for iter in range(1000):
                     action_list.append(action)
                     action_index_list.append(action_index)
                     state_list.append(state)
-                if(len(reward_list) == 0 ):
+                if len(reward_list) == 0:
                     break
                 else:
 
-                    winner_comb = np.argmax(MCS_list)
+                    winner_comb = np.argmax(mcs_list)
                     expr_list = expr_list_conv[winner_comb].copy()
-                    if 'depth_{}:_{}'.format(0,str(expr_list)) in memory_dict.keys():
-                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['value'] += 1
-                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['reward'] = reward_list[winner_comb]
-                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['cost'] = cost_list[winner_comb]
+                    if agent.epsilon < 0.9:
+                        node_names.append('depth_{}_{}'.format(depth+1,str(expr_list)))
+                        branch = ''
 
-                    else :
+                        for node in range(len(node_names[:-1])):
+                            branch = branch + "['children']"
+                            children_size = len(eval("tree_dict[0]" + branch))
+
+                            if (node == len(node_names[:-2])) & (children_size == 0):
+                                tempdict = dict()
+                                tempdict['name'] = node_names[node+1]
+                                tempdict['parent'] = node_names[node]
+                                tempdict['visits'] = 0
+                                tempdict['cost'] = cost_list[winner_comb]
+                                tempdict['reward'] = reward_list[winner_comb]
+                                tempdict['state'] = node_names[node+1]
+                                tempdict['children'] = []
+                                eval("tree_dict[0]" + branch).append(tempdict)
+                            elif (node == len(node_names[:-2])) & (children_size != 0):
+                                children_list = eval("tree_dict[0]" + branch)
+                                found = False
+                                for ind, child in enumerate(children_list):
+                                    if node_names[node+1] == child['name']:
+                                        found = True
+                                        eval("tree_dict[0]" + branch)[ind]["visits"]+=1
+                                        eval("tree_dict[0]" + branch)[ind]['cost'] = cost_list[winner_comb]
+                                        eval("tree_dict[0]" + branch)[ind]['reward'] += reward_list[winner_comb]
+                                if not(found):
+                                    tempdict = dict()
+                                    tempdict['name'] = node_names[node + 1]
+                                    tempdict['parent'] = node_names[node]
+                                    tempdict['visits'] = 0
+                                    tempdict['cost'] = cost_list[winner_comb]
+                                    tempdict['reward'] = reward_list[winner_comb]
+                                    tempdict['state'] = node_names[node + 1]
+                                    tempdict['children'] = []
+                                    eval("tree_dict[0]" + branch).append(tempdict)
+
+                            else:
+                                children_list = eval("tree_dict[0]" + branch)
+                                child_ind = "[{}]".format(0)
+                                for ind, child in enumerate(children_list):
+                                    if node_names[node+1] == child['name']:
+                                        child_ind = "[{}]".format(ind)
+                                branch = branch + child_ind
+
+                            with open('D3treelayout/treedata.json', 'w') as fp:
+                                json.dump(tree_dict, fp)
+                        #children_size = eval(len("tree_dict[0]" + branch))
+                        # if children_size == 0:
+                        #     tempdict = dict()
+                        #     tempdict['name'] = node_names[node+1]
+                        #     tempdict['parent'] = node_names[node]
+                        #     tempdict['visits'] = 0
+                        #     tempdict['state'] = node_names[node+1]
+                        #     tempdict['children'] = []
+                        # else:
+                        #     children_list = eval("tree_dict[0]" + branch)
+                        #     for child in children_list:
+                        #         if node_names[node+1] == child.name:
+                        #             eval("tree_dict[0]" + branch + ".visits += 1")
+                        #         #else:
+                        #
+
+
+ #                       eval("tree_dict[0]" + branch)
+
+
+                        # children_size = eval(len("tree_dict[0]" + branch))
+                        # if children_size == 0:
+                        #     tempdict = dict()
+                        #     tempdict['name'] = node_names[-1]
+                        #     tempdict['parent'] = eval("tree_dict[0]" + parent + "['name']")
+                        #     tempdict['visits'] = 0
+                        #     tempdict['state'] = '{}'.format(str(expr_list))
+                        #     tempdict['children'] = []
+
+
+
+                    if '{}'.format(str(expr_list)) in memory_dict.keys():
+                        memory_dict['{}'.format(str(expr_list))]['visits'] += 1
+                        memory_dict['{}'.format(str(expr_list))]['reward'] += reward_list[winner_comb]
+                        memory_dict['{}'.format(str(expr_list))]['cost'] = cost_list[winner_comb]
+
+                    else:
                         state_id += 1
-                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))] = dict()
-                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['value'] = 0
-                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['reward'] = reward_list[winner_comb]
-                        memory_dict['depth_{}:_{}'.format(0, str(expr_list))]['cost'] = cost_list[winner_comb]
+                        memory_dict['{}'.format(str(expr_list))] = dict()
+                        memory_dict['{}'.format(str(expr_list))]['visits'] = 0
+                        memory_dict['{}'.format(str(expr_list))]['reward'] = reward_list[winner_comb]
+                        memory_dict['{}'.format(str(expr_list))]['cost'] = cost_list[winner_comb]
+                        branch = ''
+                        for k in range(depth + 1):
+                            branch = branch + "['children']"
+                        parent = ''
+                        for k in range(depth):
+                            parent = parent + "['children']"
 
-                        memory_dict['depth_{}:_{}'.format(0,str(expr_list))]['id'] = state_id
-                        print('new state: ',state_id )
+                        #tempdict = dict()
+                        #tempdict['name'] = state_id
+                        #tempdict['parent'] = eval("tree_dict[0]" + parent + "['name']")
+                        #tempdict['visits'] = 0
+                        #tempdict['state'] = '{}'.format(str(expr_list))
+                        #tempdict['children'] = []
 
-                    print(MCS_list)
+   #                     eval("tree_dict[0]"+branch + "= []")
+                        #eval("tree_dict[0]" + branch).append(tempdict)
+                        memory_dict['{}'.format(str(expr_list))]['id'] = state_id
+                        print('new state: ', state_id )
+
+                    print(mcs_list)
                     print(expr_list)
-                    print(memory_dict['depth_{}:_{}'.format(0,str(expr_list))])
-                    print('depth: ',depth,winner_comb, input1_sample[winner_comb], input2_sample[winner_comb])
+                    print(memory_dict['{}'.format(str(expr_list))])
+                    print('depth: ', depth,winner_comb, input1_sample[winner_comb], input2_sample[winner_comb])
 
-                    print('reward',reward_list[winner_comb])
-                    print('cost',cost_list[winner_comb])
+                    print('reward', reward_list[winner_comb])
+                    print('cost', cost_list[winner_comb])
 
-                    #print(np.shape(prob_list[winner_comb]))
                     agent.remember(state_list[winner_comb], action_list[winner_comb], action_index_list[winner_comb],reward_list[winner_comb], prob_list[winner_comb])
             #except:
              #       break
         loss,ac = agent.train(iter)
         print('iter: ',iter, 'loss: ', loss)
-        #print('sol: ',ac)
 print(memory_dict)
