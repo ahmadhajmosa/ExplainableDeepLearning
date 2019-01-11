@@ -111,7 +111,7 @@ def cov_over_seq(expr_list,vec_to_symbol,symbol_to_vec):
     index=np.arange(0,len(expr_list))
 
     for i in range(len(expr_list)):
-        for j in range(len(expr_list)):
+        for j in range(i+1,len(expr_list),1):
             if( i != j ):
                 inp = np.zeros(n_variable*2)
                 inp2 = np.zeros(n_variable*2)

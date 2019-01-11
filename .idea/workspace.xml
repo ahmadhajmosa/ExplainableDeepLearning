@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fd7c5d-5303-422c-ae61-3ca76dfcc70b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/treedata.json" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/treedata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/model.png" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/model.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/nn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Part 1 XOR Gate/WRD workshop .ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 XOR Gate/WRD workshop .ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ExplainableDeepLearning.iml" afterPath="$PROJECT_DIR$/.idea/ExplainableDeepLearning.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/nn.py" afterPath="$PROJECT_DIR$/InductiveLogicRL/nn.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="2079">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -68,61 +66,44 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_tabular.py">
+      <file leaf-file-name="nn.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/InductiveLogicRL/nn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9801">
-              <caret line="379" selection-start-line="379" selection-end-line="379" />
+            <state relative-caret-position="189">
+              <caret line="112" column="31" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_base.py">
+      <file leaf-file-name="type_checkers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow_env/Lib/site-packages/google/protobuf/internal/type_checkers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4347">
-              <caret line="164" column="44" selection-start-line="164" selection-start-column="44" selection-end-line="164" selection-end-column="44" />
+            <state relative-caret-position="419">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/AttentionDecoder.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="policyagent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InductiveLogicRL/policyagent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5008">
+              <caret line="303" column="10" lean-forward="false" selection-start-line="303" selection-start-column="10" selection-end-line="303" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="tdd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/explanation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/pandas/core/indexes/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15687">
-              <caret line="644" selection-start-line="644" selection-end-line="644" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/framework/errors_impl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13824">
-              <caret line="523" selection-start-line="523" selection-end-line="523" />
+              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,6 +123,9 @@
       <find>.fit</find>
       <find>fit</find>
       <find>model_regressor</find>
+      <find>write_log</find>
+      <find>train</find>
+      <find>write</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,10 +135,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Part 1 XOR Gate/test.py" />
+        <option value="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" />
+        <option value="$PROJECT_DIR$/InductiveLogicRL/nn.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -162,16 +148,46 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ExplainableDeepLearning" type="b2602c69:ProjectViewProjectNode" />
               <item name="ExplainableDeepLearning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExplainableDeepLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExplainableDeepLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="InductiveLogicRL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExplainableDeepLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExplainableDeepLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="InductiveLogicRL" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExplainableDeepLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExplainableDeepLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="InductiveLogicRL" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="lr8" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExplainableDeepLearning" type="b2602c69:ProjectViewProjectNode" />
@@ -193,11 +209,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rule_nn 2/rule_nn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -217,9 +232,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.nn">
+    <configuration name="nn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InductiveLogicRL" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ExplainableDeepLearning" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InductiveLogicRL/nn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -230,20 +262,26 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ExplainableDeepLearning" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Part 1 XOR Gate/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.nn" />
+    </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.test" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.nn" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -267,26 +305,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991323" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49947312" visible="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.50474185" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.49525815" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39891306" sideWeight="0.8192835" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -309,11 +346,61 @@
           <line>372</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/InductiveLogicRL/nn.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/InductiveLogicRL/nn.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
+      <option name="time" value="14" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>input1_sample = []
+input2_sample = []
+expr_list_conv = []
+index=np.arange(0,len(expr_list))
+for i in range(len(expr_list)):
+    for j in range(i+1,len(expr_list),1):
+        if( i != j ):
+            inp = np.zeros(n_variable*2)
+            inp2 = np.zeros(n_variable*2)
+            for k in range(len(expr_list[i])):
+                inp[symbol_to_vec[expr_list[i][k]]] = 1
+            for k in range(len(expr_list[j])):
+                inp2[symbol_to_vec[expr_list[j][k]]] = 1
+            input1_sample.append(inp)
+            input2_sample.append(inp2)
+            expr = [ex for num,ex in enumerate(expr_list) if (num !=i) &amp;  (num !=j)]
+            expr_list_conv.append(expr)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>len(expr_list)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rewards[-1][0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>val</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.feature_frequencies</expression-string>
         <language-id>Python</language-id>
@@ -337,6 +424,24 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/exp.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -346,56 +451,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="2079">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_tabular.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9801">
-          <caret line="379" selection-start-line="379" selection-end-line="379" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4347">
-          <caret line="164" column="44" selection-start-line="164" selection-start-column="44" selection-end-line="164" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/AttentionDecoder.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_tabular.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/lime_base.py" />
     <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/explanation.py">
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/explanation.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/pandas/core/indexes/base.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/framework/errors_impl.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow_env/Lib/site-packages/google/protobuf/internal/type_checkers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="419">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/pandas/core/indexes/base.py">
+    <entry file="file://$PROJECT_DIR$/InductiveLogicRL/policyagent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15687">
-          <caret line="644" selection-start-line="644" selection-end-line="644" />
+        <state relative-caret-position="5008">
+          <caret line="303" column="10" lean-forward="false" selection-start-line="303" selection-start-column="10" selection-end-line="303" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/tensorflow/python/framework/errors_impl.py">
+    <entry file="file://$PROJECT_DIR$/InductiveLogicRL/nn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13824">
-          <caret line="523" selection-start-line="523" selection-end-line="523" />
+        <state relative-caret-position="189">
+          <caret line="112" column="31" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
