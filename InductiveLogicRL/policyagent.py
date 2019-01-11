@@ -303,7 +303,7 @@ class PolicyAgent:
         current_actions=self.actions.copy()
         train_names = ['train_loss', 'train_w_gradient_norm','train_policy_gradient_norm','rewards','values']
         policy_gradient_norm = np.sqrt(sum([np.sum(np.square(g)) for g in gradients]))
-        self.write_log(train_names, [loss, gradient_norm, policy_gradient_norm, rewards[-1],np.sum(rewards)], batch_no)
+        self.write_log(train_names, [loss, gradient_norm, policy_gradient_norm, rewards[-1][0],np.sum(rewards)], batch_no)
         if self.epsilon > self.epsilon_min:
             print(self.epsilon)
             self.epsilon *= self.epsilon_decay
