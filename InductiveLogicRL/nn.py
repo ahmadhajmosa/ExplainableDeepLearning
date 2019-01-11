@@ -54,7 +54,7 @@ truth_table = list(itertools.product([0, 1], repeat=n_variable))
 truth_table_df= pd.DataFrame(truth_table, columns= np.asarray(sm).astype('str'))
 
 # write a target logical expression, that the sympy should find
-y=(truth_table_df['X0'] & truth_table_df['X1']) |  truth_table_df['X2']  # x0x1 + x2
+y=(truth_table_df['X0'] & truth_table_df['X1']) |  truth_table_df['X2']  # x0 x1 + x2
 
 
 def target_vec_rule_dict(n_variable):  # create vec to symbol and symbol to vec dictinaries
@@ -212,7 +212,7 @@ for iter in range(1000):
                     state = [np.reshape(input1_sample[conv_iter],(1,6,1)), np.reshape(input2_sample[conv_iter],(1,6,1))]
                     state_l = [input1_sample[conv_iter], input2_sample[conv_iter]]
 
-                    action, action_index, prob = agent.conv_act(state,state_l,vec_to_symbol,symbol_to_vec)
+                    action, action_index, prob, val = agent.conv_act(state,state_l,vec_to_symbol,symbol_to_vec)
 
                     expr_list_conv[conv_iter].append(action)
                     reward, cost = get_reward_conv(action, truth_table_df, expr_list_conv[conv_iter],y)

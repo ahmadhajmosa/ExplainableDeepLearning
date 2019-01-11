@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7fd7c5d-5303-422c-ae61-3ca76dfcc70b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/treedata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InductiveLogicRL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546526667.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546526806.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546526943.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546527044.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546527673.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546527782.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546528099.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546529934.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546530599.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546530664.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546531016.AT-VIETERTLS001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/logs/lr8/events.out.tfevents.1546531122.AT-VIETERTLS001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/treedata.json" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/D3treelayout/treedata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/model.png" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/model.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InductiveLogicRL/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/nn.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" beforeDir="false" afterPath="$PROJECT_DIR$/InductiveLogicRL/policyagent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InductiveLogicRL/pylogic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Part 1 XOR Gate/WRD workshop .ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Part 1 XOR Gate/WRD workshop .ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +22,10 @@
         <counts>
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="3" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.3" value="5" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,11 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1863">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="272">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -103,7 +91,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -166,8 +154,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -178,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +193,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,7 +267,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -291,9 +280,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49947312" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -357,8 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Part 1 XOR Gate/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="272">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -382,6 +371,13 @@
     <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/AttentionDecoder.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/tensorflow/Lib/site-packages/lime-0.1.1.32-py3.6.egg/lime/explanation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -400,13 +396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13824">
           <caret line="523" selection-start-line="523" selection-end-line="523" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rule Parser/rule_nn/tdd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>

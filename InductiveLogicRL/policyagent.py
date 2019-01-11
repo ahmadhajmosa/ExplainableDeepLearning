@@ -24,7 +24,7 @@ from collections import deque
 import keras
 import random
 from sympy.logic import simplify_logic
-
+from keras.utils import plot_model
 import numpy as np
 import pandas as pd
 from functions import random_data, random_rules
@@ -96,13 +96,35 @@ class PolicyAgent:
             attention_prop = AttentionDecoder(model_hyperparameters['Bidirectional_Layer2'], 1,
                                               name="output_attention_decoder",
                                               return_probabilities=True)(merged_vector)
+        with K.name_scope('Flattern'):
+            flat = Flatten()(merged_vector)
+        with K.name_scope('Value_Dense1'):
+            d1 = Dense( 100 ,activation='relu',kernel_regularizer=regularizers.l2(0.001))(flat)
+        with K.name_scope('Value_Dense2'):
+            d2 = Dense(1,activation='sigmoid', kernel_regularizer=regularizers.l2(0.001),name = 'value_output')(d1)
         with K.name_scope('Output_layer'):
 
             model = Model([model_input, model_input2], attention_decoder)
+            value_model = Model([model_input, model_input2], d2)
+            alpha_model = Model([model_input, model_input2], [attention_decoder, d2])
             model_prop = Model([model_input, model_input2], attention_prop)
-        model.compile(loss='binary_crossentropy',optimizer=SGD(lr=self.learning_rate, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=1. ))
+        model.compile(loss='binary_crossentropy',optimizer=SGD(lr=self.learning_rate, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=2. ))
+
+
+        losses = dict()
+        losses['value_output'] = "mse"
+        losses['output_attention_decoder'] = "binary_crossentropy"
+        lossWeights = dict()
+        lossWeights["value_output"] = 1
+        lossWeights["output_attention_decoder"] = 1
+        alpha_model.compile(loss=losses,loss_weights=lossWeights,optimizer=SGD(lr=self.learning_rate, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=2. ))
+
+        value_model.compile(loss='mse',optimizer=SGD(lr=self.learning_rate, decay=1e-6, momentum=0.9, nesterov=True, clipnorm=2. ))
+
         self.model= model
+        self.alpha_model = alpha_model
         self.log_path = './logs/lr8'
+        plot_model(alpha_model, to_file='model.png')
 
         self.callback = TensorBoard(self.log_path)
         self.callback.set_model(self.model)
@@ -135,7 +157,9 @@ class PolicyAgent:
         #sequences = input_tokenizer.texts_to_sequences(state.split(' '))
         #state = pad_sequences(np.transpose(sequences), maxlen=MAX_SEQUENCE_LENGTH)
 
-        aprob = self.model.predict(state)
+        #aprob = self.model.predict(state)
+        aprob, value = self.alpha_model.predict(state)
+
         aprob=aprob.squeeze()
 
         #self.probs.append(aprob)
@@ -172,7 +196,7 @@ class PolicyAgent:
 
 
 
-        return action,action_index,aprob  # returns action
+        return action,action_index,aprob, value   # returns action
 
     def get_random_action(self, state_list):
         indexes = []
@@ -287,7 +311,31 @@ class PolicyAgent:
         self.states, self.probs, self.gradients, self.rewards, self.actions = [], [], [], [], []
         return loss,current_actions
 
+    def alpha_train(self,batch_no):
 
+        gradients = np.vstack(self.gradients)
+        rewards = np.vstack(self.rewards)
+        rewards = self.discount_rewards(rewards)
+
+        rewards = rewards / (np.std(rewards - np.mean(rewards))+1e-20)
+        gradients *= np.reshape(rewards,(-1,1))
+        X1 = np.reshape(self.states,(-1,self.NB_VARS,1,2))[:,:,:,0]
+        X2 = np.reshape(self.states,(-1,self.NB_VARS,1,2))[:,:,:,1]
+
+        Y = self.probs + self.learning_rate * np.squeeze(np.vstack([gradients]))
+        loss, gradient_norm  = self.model.train_on_batch([X1,X2],np.reshape(Y,(-1,self.NB_VARS,1)))
+        current_actions=self.actions.copy()
+        train_names = ['train_loss', 'train_w_gradient_norm','train_policy_gradient_norm','rewards','values']
+        policy_gradient_norm = np.sqrt(sum([np.sum(np.square(g)) for g in gradients]))
+        self.write_log(train_names, [loss, gradient_norm, policy_gradient_norm, rewards[-1],np.sum(rewards)], batch_no)
+        
+        if self.epsilon > self.epsilon_min:
+            print(self.epsilon)
+            self.epsilon *= self.epsilon_decay
+            
+        #print(policy_gradient_norm, gradient_norm)
+        self.states, self.probs, self.gradients, self.rewards, self.actions = [], [], [], [], []
+        return loss,current_actions
 
     def replay(self, batch_size,input_tokenizer,MAX_SEQUENCE_LENGTH,output_index2word):
         minibatch = random.sample(self.memory, batch_size)
