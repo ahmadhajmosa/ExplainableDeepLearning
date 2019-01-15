@@ -116,16 +116,16 @@ def cov_over_seq(expr_list,vec_to_symbol,symbol_to_vec):
     for i in range(len(expr_list)):
         for j in range(i+1,len(expr_list),1):
             if( i != j ):
-                inp = np.zeros(3, n_variable)
-                inp2 = np.zeros(3, n_variable) # 3 for X, ~X and non
+                inp = np.zeros((3, n_variable))
+                inp2 = np.zeros((3, n_variable)) # 3 for X, ~X and non
 
                 for k in range(len(expr_list[i])):
 
-                    inp[symbol_to_vec[expr_list[i][k]]] = 1
+                    inp[symbol_to_vec[expr_list[i][k]][0]][symbol_to_vec[expr_list[i][k]][1]] = 1
 
                 for k in range(len(expr_list[j])):
 
-                    inp2[symbol_to_vec[expr_list[j][k]]] = 1
+                    inp2[symbol_to_vec[expr_list[i][k]][0]][symbol_to_vec[expr_list[i][k]][1]] = 1
 
                 input1_sample.append(inp)
                 input2_sample.append(inp2)
