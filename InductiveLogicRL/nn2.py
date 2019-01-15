@@ -99,9 +99,9 @@ def term_to_expr(minterms, vec_to_symbol, symbol_to_vec):  # get miniterms (rows
             expr=[] # single expression initialization
             for k in range(len(minterms[i])): # for every elemnt in the row
                 if minterms[i][k] == 0 :
-                    expr.append(vec_to_symbol[k+n_variable]) # if the binary values is 0 then get the negative symbol ~X_k
-                else:
-                    expr.append(vec_to_symbol[k]) # get X_k
+                    expr.append(vec_to_symbol[k][1]) # if the binary values is 0 then get the negative symbol ~X_k
+                else :
+                    expr.append(vec_to_symbol[k][0]) # get X_k
             expr_list.append(expr)
         return expr_list
 
