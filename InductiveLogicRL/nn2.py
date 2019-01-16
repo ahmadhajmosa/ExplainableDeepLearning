@@ -22,7 +22,7 @@ from keras import regularizers
 from AttentionDecoder import AttentionDecoder
 import pickle
 from keras.models import Sequential
-from policyagent import PolicyAgent
+from policyagent2 import PolicyAgent
 import sympy
 from sympy import *
 import itertools
@@ -89,7 +89,7 @@ vec_to_symbol, symbol_to_vec, vec_to_op, op_to_vec = target_vec_rule_dict(n_vari
 
 minterms=truth_table_df[y==1].values.tolist()  # slice rows where target is true
 
-agent = PolicyAgent(intermediate_dim=50,MAX_SEQUENCE_LENGTH=1,NumCol=2,NB_VARS=n_variable*2,NB_WORDS_OUT=n_variable*2)  # initialize policy agent
+agent = PolicyAgent(intermediate_dim=50,MAX_SEQUENCE_LENGTH=n_variable,NumCol=2,NB_VARS=3,NB_WORDS_OUT=n_variable*2)  # initialize policy agent
 print(agent.model.summary())
 
 
